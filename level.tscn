@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://dnvdjk0gcmiqi"]
+[gd_scene format=3 uid="uid://bc2t3egnnk43e"]
 
 [node name="Level" type="Node3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="CollisionShape3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/RigidBody3D"]
