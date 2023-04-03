@@ -1,0 +1,38 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://bgc3ynwebhhu0"]
+
+[ext_resource type="Texture2D" uid="uid://c4th5mtphbnr6" path="res://imgs/grid.png" id="1_8owhp"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6y4co"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_f7vuu"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(60, 40, 1)]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_4kuub"]
+texture = ExtResource("1_8owhp")
+
+[resource]
+code = "shader_type spatial;
+uniform sampler2D tex_frg_4;
+
+
+
+void fragment() {
+// Texture2D:4
+	vec4 n_out4p0 = texture(tex_frg_4, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out4p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-791.162, 40.608)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_6y4co")
+nodes/fragment/2/position = Vector2(-720, 280)
+nodes/fragment/3/node = SubResource("VisualShaderNodeVectorOp_f7vuu")
+nodes/fragment/3/position = Vector2(-325.023, 347.008)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_4kuub")
+nodes/fragment/4/position = Vector2(-20, 140)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 4, 0, 0, 0)
