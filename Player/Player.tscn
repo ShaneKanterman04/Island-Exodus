@@ -10,6 +10,7 @@ size = Vector2(28, 24)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_fm4xp")
 move_speed = 35.0
+sprint_mult = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nr6o6")
